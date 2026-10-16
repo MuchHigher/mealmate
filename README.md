@@ -1,17 +1,26 @@
-# mealmate
+# MealMate
 
-A new Flutter project.
+Aplikasi pencarian resep berbasis Flutter yang mengambil data dari [TheMealDB](https://www.themealdb.com/api.php).
+Dibuat sebagai tugas Ujian Tengah Semester (UTS) mata kuliah Mobile Programming.
 
-## Getting Started
+## Identitas
 
-This project is a starting point for a Flutter application.
+| | |
+|---|---|
+| Nama | Muhammad Faiz Lidinillah |
+| NIM | 240605110043 |
+| Kelas | Mobile Programming Praktikum C |
+| Program Studi | Teknik Informatika |
+| Fakultas | Sains dan Teknologi |
+| Universitas | Universitas Islam Negeri Maulana Malik Ibrahim Malang |
+| Semester | Ganjil 2025/2026 |
 
-A few resources to get you started if this is your first Flutter project:
+## Fitur
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+- Kategori resep dari API sebagai navigasi pencarian
+- Rekomendasi resep acak di beranda
+- Pencarian resep berdasarkan kata kunci
+- Daftar resep (grid) berdasarkan kategori atau hasil pencarian
+- Detail resep: gambar, kategori, asal masakan, bahan, dan instruksi memasak
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
