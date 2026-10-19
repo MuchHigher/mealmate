@@ -39,8 +39,9 @@ class _HomePageState extends State<HomePage> {
       child: FutureBuilder(
         future: data,
         builder: (c, s) {
-          if (!s.hasData)
+          if (s.connectionState == ConnectionState.waiting)
             return const Center(child: CircularProgressIndicator());
+          if (s.hasError) return const _ApiErrorMessage();
           final d = s.data!;
           return CustomScrollView(
             slivers: [
@@ -147,4 +148,10 @@ class _HomePageState extends State<HomePage> {
       ),
     ),
   );
+}
+
+class _ApiErrorMessage extends StatelessWidget {
+  const _ApiErrorMessage();
+  @override
+  Widget build(BuildContext context) => const Center(child: Padding(padding: EdgeInsets.all(24), child: Column(mainAxisSize: MainAxisSize.min, children: [Icon(Icons.cloud_off_rounded, size: 48), SizedBox(height: 12), Text('Data resep tidak dapat dimuat. Periksa koneksi internet lalu coba lagi.', textAlign: TextAlign.center)])));
 }

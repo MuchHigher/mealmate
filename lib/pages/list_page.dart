@@ -29,8 +29,10 @@ class _ListPageState extends State<ListPage> {
     body: FutureBuilder(
       future: data,
       builder: (c, s) {
-        if (!s.hasData) return const Center(child: CircularProgressIndicator());
+        if (s.connectionState == ConnectionState.waiting) return const Center(child: CircularProgressIndicator());
+        if (s.hasError) return const Center(child: Text('Data resep tidak dapat dimuat.'));
         final x = s.data!;
+        if (x.isEmpty) return const Center(child: Text('Resep tidak ditemukan.'));
         return GridView.builder(
           padding: const EdgeInsets.all(20),
           itemCount: x.length,

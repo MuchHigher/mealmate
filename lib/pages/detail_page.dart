@@ -11,7 +11,8 @@ class DetailPage extends StatelessWidget {
     body: FutureBuilder<Meal?>(
       future: MealApi().detail(meal.id),
       builder: (c, s) {
-        if (!s.hasData) return const Center(child: CircularProgressIndicator());
+        if (s.connectionState == ConnectionState.waiting) return const Center(child: CircularProgressIndicator());
+        if (s.hasError || s.data == null) return const Center(child: Text('Detail resep tidak dapat dimuat.'));
         final m = s.data!;
         return CustomScrollView(
           slivers: [
